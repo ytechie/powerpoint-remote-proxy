@@ -44,12 +44,24 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="PowerPointProxyManifest\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{37bff467-85bc-4b6d-8498-e1e29e509f60}</SharePointProjectItemId>
     </None>
     <Content Include="PowerPointProxyManifest\PowerPointProxy.xml">
       <OpcRelationship>manifest-oemanifest</OpcRelationship>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Web\Web.csproj">
+      <Project>{325EA967-5AB4-4123-A8D7-4A79FEFF9149}</Project>
+      <Name>Web</Name>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <OutputItemType>SharePointWebProjectOutput</OutputItemType>
+      <RoleName>Web</RoleName>
+      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

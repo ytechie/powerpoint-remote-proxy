@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Home View";
+}
+
+<p>
+    Your access code is
+    <h1>@ViewBag.GeneratedSessionId</h1>
+</p>
+
+<a href="#" onclick="goToPreviousSlide()">Prev Slide</a> | <a href="#" onclick="goToNextSlide()">Next Slide</a>
+
+<p>
+    Server Status: <span id="SignalrStatus">Connecting...</span>
+</p>
+

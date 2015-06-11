@@ -5,13 +5,13 @@
   <Version>1.0.0.0</Version>
   <ProviderName>[Provider name]</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="PowerPointProxy" />
-  <Description DefaultValue="PowerPointProxy"/>
+  <DisplayName DefaultValue="Web" />
+  <Description DefaultValue="Web Description"/>
   <Hosts>
     <Host Name="Presentation" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="http://bing.com" />
+    <SourceLocation DefaultValue="http://powerpointremoteproxy.azurewebsites.net/" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
