@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 
 namespace Web.Hubs
 {
-    [HubName("slider")]
     public class SliderHub : Hub
     {
         public override Task OnConnected()
@@ -13,15 +12,22 @@ namespace Web.Hubs
             return base.OnConnected();
         }
 
-        //This allows us to send data from a static context
-        public static void NextSlide(IHubConnectionContext<dynamic> clients)
+        public void Subscribe(int groupId)
         {
-            clients.All.next();
+            Groups.Add(Context.ConnectionId, groupId.ToString());
         }
 
-        public static void PrevSlide(IHubConnectionContext<dynamic> clients)
+        //This allows us to send data from a static context
+        public static void NextSlide(int groupId)
         {
-            clients.All.previous();
+            var hubContext = GlobalHost.ConnectionManager.GetHubContext<SliderHub>();
+            hubContext.Clients.Group(groupId.ToString()).next();
+        }
+
+        public static void PrevSlide(int groupId)
+        {
+            var hubContext = GlobalHost.ConnectionManager.GetHubContext<SliderHub>();
+            hubContext.Clients.Group(groupId.ToString()).previous();
         }
 
     }

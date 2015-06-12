@@ -16,23 +16,21 @@
     initialize();
 
     function initialize() {
-        var connection = $.hubConnection();
-        proxy = connection.createHubProxy('slider');
+        var proxy = $.connection.sliderHub;
 
-        proxy.on('connected', function (connectionId) {
-            clientId = connectionId
-            $('#SignalrStatus').text("Connected.")
+        proxy.client.next = goToNextSlide;
+        proxy.client.previous = goToPreviousSlide;
+        proxy.client.first = goToFirstSlide;
+        proxy.client.last = goToLastSlide;
+
+        $.connection.hub.start().done(function () {
+            $('#SignalrStatus').text("Connected.");
+            console.log('Connected to the SignalR hub');
+            proxy.server.subscribe(window.generatedSessionId);
+        }).fail(function () {
+            console.error('Could not connect to the SignalR hub :-(');
         });
-
-        proxy.on('next', goToNextSlide);
-        proxy.on('previous', goToPreviousSlide);
-        proxy.on('first', goToFirstSlide);
-        proxy.on('last', goToLastSlide);
-
-        connection.start()
-            .done(function () { console.log('Now connected, connection ID=' + connection.id); })
-            .fail(function () { console.log('Could not Connect!'); });
-    };
+    }
 })();
 
 function goToNextSlide() {

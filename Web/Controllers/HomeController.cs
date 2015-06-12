@@ -8,7 +8,7 @@ namespace Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var sessionId = (new Random()).Next(0, 9999);
+            var sessionId = 1234; //(new Random()).Next(0, 9999);
             ViewBag.GeneratedSessionId = sessionId.ToString("0000");
             return View();
         }

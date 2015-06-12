@@ -18,8 +18,7 @@ namespace Web.Controllers
 
             try
             {
-            var context = GlobalHost.ConnectionManager.GetHubContext<SliderHub>();
-            SliderHub.NextSlide(context.Clients);
+                SliderHub.NextSlide(id);
             }
             catch(Exception ex)
             {
@@ -34,8 +33,7 @@ namespace Web.Controllers
 
             try
             {
-                var context = GlobalHost.ConnectionManager.GetHubContext<SliderHub>();
-                SliderHub.PrevSlide(context.Clients);
+                SliderHub.PrevSlide(id);
             }
             catch (Exception ex)
             {

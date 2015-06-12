@@ -11,7 +11,7 @@
     <Host Name="Presentation" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="http://powerpointremoteproxy.azurewebsites.net/" />
+    <SourceLocation DefaultValue="http://powerpointremoteproxy.azurewebsites.net/home/index" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
