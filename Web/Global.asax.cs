@@ -14,6 +14,8 @@ namespace Web
     {
         void Application_Start(object sender, EventArgs e)
         {
+            Log4stuff.Appender.Log4stuffAppender.AutoConfigureLogging("band-office-remote");
+
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
