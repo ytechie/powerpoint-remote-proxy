@@ -3,15 +3,15 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>db37f460-d58b-401b-a621-ca2797fc5815</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>Young Technologies LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Web" />
-  <Description DefaultValue="Web Description"/>
+  <DisplayName DefaultValue="Band PowerPoint Remote" />
+  <Description DefaultValue="Pair with an upcoming phone app to allow your Microsoft band to control your PowerPoint presentation using nothing but gestures!"/>
   <Hosts>
     <Host Name="Presentation" />
   </Hosts>
   <DefaultSettings>
     <SourceLocation DefaultValue="http://powerpointremoteproxy.azurewebsites.net/home/index" />
   </DefaultSettings>
-  <Permissions>ReadWriteDocument</Permissions>
+  <Permissions>Restricted</Permissions>
 </OfficeApp>
